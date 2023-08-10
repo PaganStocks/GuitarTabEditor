@@ -1,0 +1,39 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+	  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	  version="2.0">
+
+    <!-- In 'barline' element, bind the 'segno' attribute to Java 'segnoAttribute' -->
+    <bindings schemaLocation="../musicxml.xsd"
+              node="/xs:schema/xs:complexType[@name='barline']/xs:attribute[@name='segno']">
+        <property name="segnoAttribute" />
+    </bindings>
+
+    <!-- In 'barline' element, bind the 'coda' attribute to Java 'codaAttribute' -->
+    <bindings schemaLocation="../musicxml.xsd"
+              node="/xs:schema/xs:complexType[@name='barline']/xs:attribute[@name='coda']">
+        <property name="codaAttribute" />
+    </bindings>
+
+    <bindings schemaLocation="../musicxml.xsd"
+              node="/xs:schema/xs:complexType/xs:sequence/xs:element[@name='link']">
+        <property name="creditLink" />
+    </bindings>
+
+
+    <bindings schemaLocation="../xlink.xsd" node="/xs:schema">
+
+        <bindings node="//xs:attributeGroup[@name='locatorAttrs']">
+            <bindings node=".//xs:attribute[@ref='xlink:title']">
+                <property name="title1"/>
+            </bindings>
+        </bindings>
+
+        <bindings node="//xs:attributeGroup[@name='arcAttrs']">
+            <bindings node=".//xs:attribute[@ref='xlink:title']">
+                <property name="title2"/>
+            </bindings>
+        </bindings>
+    </bindings>
+
+
+</bindings>

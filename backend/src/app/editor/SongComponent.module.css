@@ -1,0 +1,12 @@
+.editorControls {
+    grid-row-start: 0;
+    grid-row-end: 1;
+}
+
+.editor {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    overflow-x: scroll;
+    height: 100%;
+    width: 1500px;
+}

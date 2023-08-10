@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Song Editor</title>
+    <link href="/static/css/editor.css" rel="stylesheet">
+    <link href="/static/css/navBar.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+    <nav class="topnav" th:include="fragments/navbar">
+    </nav>
+</header>
+
+<main>
+    <h1>Song Editor</h1>
+
+
+    <form class="authorForm">
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" name="author"><br>
+    </form>
+
+    <form class="songNameForm">
+        <label for="songName">Song Name:</label><br>
+        <input type="text" id="songName" name="songName"><br>
+    </form>
+    <button id="saveButton">Save</button>
+    <div class="editChord">
+        <div>
+            <span class="beatNumber"></span>
+        </div>
+        <form id="editChordForm" class="displyWhenActive">
+            <div id="chord">
+                <input name="chord" autocomplete="off" placeholder="Chord">
+            </div>
+            <div class="stringOne">
+                <input name="stringOne" autocomplete="off" class="text1">
+            </div>
+            <div class="stringTwo">
+                <input name="stringTwo" autocomplete="off" class="text2">
+            </div>
+            <div class="stringThree">
+                <input name="stringThree" autocomplete="off" class="text3">
+            </div>
+            <div class="stringFour">
+                <input name="stringFour" autocomplete="off" class="text4">
+            </div>
+            <div class="stringFive">
+                <input name="stringFive" autocomplete="off" class="text5">
+            </div>
+            <div class="stringSix">
+                <input name="stringSix" autocomplete="off" class="text6">
+            </div>
+            <div class="chordLyric">
+                <input placeholder="Lyric" autocomplete="off" name="lyric">
+            </div>
+        </form>
+    </div>
+    <section id="staveContainer">
+    </section>
+</main>
+<script type="module" src="/static/js/main_editor.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+.authorForm{
+    grid-row: 2;
+    grid-column: 1;
+}
+.songNameForm{
+    grid-row: 2;
+    grid-column: 2;
+}
+.songComponent{
+    min-height: 350px;
+    overflow: scroll;
+    margin: 2em;
+    grid-row: 3;
+    grid-column: 1 / 20;
+}
+
+.editChord input{
+    width: 40px;
+    height: 14px;
+    text-align: center;
+}
+
+#editChordForm{
+    height: 100px;
+}
+
+.editChord{
+     display: none;
+    position: absolute;
+}

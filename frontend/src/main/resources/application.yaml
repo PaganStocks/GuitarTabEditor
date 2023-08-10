@@ -1,0 +1,36 @@
+spring:
+  mvc.static-path-pattern: /static/**
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: cIXxXPDLF6BiC1G7oX3wbqcxIkOmssuG
+            client-secret: ${CLIENT_SECRET}
+            scope:
+              - openid
+              - profile
+              - email
+              - read:current_user
+        provider:
+          auth0:
+            issuer-uri: https://dev-an5ttq516gzjcpox.eu.auth0.com/
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-an5ttq516gzjcpox.eu.auth0.com/
+          jwk-set-uri: https://dev-an5ttq516gzjcpox.eu.auth0.com/.well-known/jwks.json
+  datasource:
+    url: jdbc:h2:mem:musicnotes
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        web: DEBUG
